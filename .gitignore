@@ -9,6 +9,9 @@ __pycache__/
 # models
 pretrained_models/
 
+# results
+*.json
+
 # Distribution / packaging
 .Python
 build/

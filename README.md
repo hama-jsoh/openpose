@@ -15,8 +15,10 @@ pretrained_models/
 2. Put data
 ```
 data/
-└── test
-    └── messi.jpg
+└── human
+    ├── human_00.jpg
+    ├── human_01.jpg
+    └── ...
 ```
 
 3. Run
@@ -29,21 +31,21 @@ python3 openpose.py
 ```python
 import openpose
 
+
 if __name__ == "__main__":
 
     # openpose configuration
         pose = OpenPose(
 		model="coco",
-		verbose=False,
+		verbose=True,
 	)
 
     # run openpose
-    kpts = pose.Inference()
+    kpts = pose.Inference(dataroot="./data/human")
 
     # fileio
     pose.FileOutput(
 	dict_obj=kpts,
-	path="./output.json",
         indent=False,
     )
 ```

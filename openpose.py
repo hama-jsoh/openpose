@@ -136,7 +136,7 @@ class OpenPose:
     def FileOutput(dict_obj, indent: bool = False) -> None:
         for file in dict_obj.keys():
             filename = file[: file.rfind(".")]
-            with open(f"{filename}.json", "w") as j:
+            with open(f"{filename}_keypoints.json", "w") as j:
                 if indent:
                     json.dump(dict_obj[file], j, ensure_ascii=False, indent=4)
                 else:
@@ -198,7 +198,7 @@ if __name__ == "__main__":
     )
 
     # run openpose
-    kpts = pose.Inference(dataroot="./data/human")
+    kpts = pose.Inference(dataroot="./data/samples")
 
     # fileio
     pose.FileOutput(

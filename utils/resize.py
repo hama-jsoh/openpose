@@ -53,16 +53,16 @@ def ResizeImg(img: np.array, width: int, height: int) -> np.array:
 
 if __name__ == "__main__":
 
-    dataroot = './data/human'
+    dataroot = '/home/ubuntu/projects/eot/PASTA-GAN-plusplus/tests/image'
 
     fileList = os.listdir(dataroot)
     imgList = []
     for file in fileList:
-        imgPath = os.path.join(dataroot, file)
-        imgList.append(imgPath)
-
+        if "._human" not in file:
+            imgPath = os.path.join(dataroot, file)
+            imgList.append(imgPath)
     for img in imgList:
         filename = img[: img.rfind(".")]
         img = cv2.imread(img)
         img = ResizeImg(img, 320, 512)
-        cv2.imwrite(f"{filename}_resized.jpg", img)
+        cv2.imwrite(f"{filename}.jpg", img)

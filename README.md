@@ -3,17 +3,6 @@
 ## Getting Started
 
 ### Step 1: Set Up the Folder Structure (models)
-
-- Pretrained models : [COCO (Google-Drive)](https://drive.google.com/drive/folders/1Oz_fDTMDSttZMu-Va6kGvE81kaggm3sC?usp=sharing)
-
-```bash
-pretrained_models/
-├── pose_deploy_linevec.prototxt
-└── pose_iter_440000.caffemodel
-```
-or  
-
-- Just, Run (Automatic setting)
 ```bash
 bash setup.sh
 ```

@@ -2,17 +2,24 @@
 
 ## Getting Started
 
-### Pre-requisite
+### Step 1: Set Up the Folder Structure (models)
 
-1. Download pretrained models : COCO > [Google-Drive](https://drive.google.com/drive/folders/1Oz_fDTMDSttZMu-Va6kGvE81kaggm3sC?usp=sharing)
+- Pretrained models : [COCO (Google-Drive)](https://drive.google.com/drive/folders/1Oz_fDTMDSttZMu-Va6kGvE81kaggm3sC?usp=sharing)
 
 ```bash
 pretrained_models/
 ├── pose_deploy_linevec.prototxt
 └── pose_iter_440000.caffemodel
 ```
+or  
 
-2. Put data
+- Just, Run (Automatic setting)
+```bash
+bash setup.sh
+```
+
+
+### Step 2: Put data
 ```
 data/
 └── human
@@ -21,11 +28,16 @@ data/
     └── ...
 ```
 
-3. Run
+### Step 3: Run
 ```bash
 python3 openpose.py
 ```
   
+### Step 4: Check output
+```bash
+ls data/samples
+```
+
 #
 ### Simple Example
 ```python

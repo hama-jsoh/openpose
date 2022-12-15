@@ -1,0 +1,13 @@
+version: "3"
+services:
+  openpose:
+    container_name: openpose
+    image: pastagan_plus_plus:0.0.1
+    volumes:
+      - ../:/Projects
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+    environment:
+      - DISPLAY=$DISPLAY
+    network_mode: "host"
+    working_dir: /Projects/
+    tty: true
